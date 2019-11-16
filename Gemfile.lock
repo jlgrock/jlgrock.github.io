@@ -50,7 +50,7 @@ GEM
       gemoji (~> 3.0)
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
-    jlgrock-flexible-jekyll-theme (0.1.0)
+    jlgrock-flexible-jekyll-theme (0.2.0)
       jekyll (~> 4.0)
     kramdown (2.1.0)
     kramdown-parser-gfm (1.1.0)
@@ -90,7 +90,7 @@ DEPENDENCIES
   jekyll-paginate
   jekyll-sitemap
   jemoji
-  jlgrock-flexible-jekyll-theme (= 0.1.0)
+  jlgrock-flexible-jekyll-theme (= 0.2.0)
 
 BUNDLED WITH
    2.0.2
