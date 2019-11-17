@@ -34,7 +34,7 @@ social: jlgrock
 # Tracker
 analytics: # Google Analytics
 
-theme: jlgrock-flexible-jekyll-theme
+remote-theme: jlgrock/flexible-jekyll
 
 # Build Settings
 markdown: kramdown
