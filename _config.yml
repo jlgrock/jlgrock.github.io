@@ -28,6 +28,7 @@ url: "http://www.justinleegrant.com" # the base hostname & protocol for your sit
 author: Justin Grant
 author-img: beardie.jpg
 about-author: A guy who likes to play with tech, and is half-way decent at it
+show-more-about: true
 social: jlgrock
 
 # Tracker
