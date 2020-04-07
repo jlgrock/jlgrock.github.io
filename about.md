@@ -18,5 +18,5 @@ At this point, I act in the capacity of a Systems Architect.  I interpret enterp
 # My Resume
 
 * [The quick read](/assets/resumes/2018-08-Justin_Lee_Grant.pdf)
-* [The detailed resume](/assets/resumes/2020-04-Justin_Lee_Grant_detailed.pdf)
+* [The detailed resume](/assets/resumes/2020-04-Justin_Lee_Grant_detailed.doc)
 
