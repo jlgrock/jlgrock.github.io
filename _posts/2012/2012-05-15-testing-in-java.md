@@ -16,7 +16,7 @@ This is going to depend on your build tools.  Most companies use Maven right no
 
 The following code should be added to your pom.xml so that you have the tools available when your code is testing.  If you plan on messing with the versions listed here, make sure to reference the following chart first: [Supported Versions](http://code.google.com/p/powermock/wiki/MockitoUsage13)
 
-{% highlight xml %}
+```xml
 	...
 	<dependency>
 		<groupId>junit</groupId>
@@ -37,7 +37,7 @@ The following code should be added to your pom.xml so that you have the tools av
 		<scope>test</scope>
 	</dependency>
 	...
-{% endhighlight %}
+```
 
 ## Setting up your Imports
 In your newly created class, you are going to need access to some things that we’ll cover as I continue on.  For the time being, go ahead and statically import JUnit and PowerMock into your class.  This will allow you to use the static methods as if they were locally defined.
@@ -53,7 +53,7 @@ I can only hope that every student out there is learning to test with JUnit or T
 At this point in time, if you are including this in your project, you have to use a flavor of JUnit 4.  There are a bunch of features added in this version that you’ll eventually want to take advantage of, and you have to watch compatibility too.
 
 The basic structure of your test cases is as follows:
-{% highlight java %}
+```java
 public class MyClassTest {
 	@Before
 	public void setup() {
@@ -70,7 +70,7 @@ public class MyClassTest {
 		//…testCode goes here…
 	}
 }
-{% endhighlight %}
+```
 
 The `@Before` annotation tells JUnit to run this method **before every method**.  There is also a `@BeforeClass` annotation, should you only want this to run once before any of the methods are called.
 
@@ -87,16 +87,16 @@ Unit testing has become so important that there are ideologies based around them
 
 So, what does that mean?  It means that you should never instantiate a class that you aren’t testing.  For example, if I am testing MyClass(), the only “new” keyword that should be used is to instantiate MyClass.  If MyClass has a constructor that takes two parameters:
 
-{% highlight java %}
+```java
 	MyClass(MyObj a, MySecondObj b)
-{% endhighlight %}
+```
 
 What do I do now?  Well, as I said, you don’t create a or b.  By doing that, you’d be testing how well MyObj and MySecondObj work.  We don’t care about that.  So then what?  We Mock them.
 
 Mocking is a tool that allows users to have the object, pass it around, and watch how it interacts with others, without actually creating the object.
 
 How do you use it?
-{% highlight java %}
+```java
 @RunWith(PowerMockRunner.class)
 public class MyClassTest {
 	@Mock
@@ -107,7 +107,7 @@ public class MyClassTest {
 
 	//… tests …
 }
-{% endhighlight %}
+```
 
 The `@RunWith` annotation tells it to look for annotations and preload them and the `@Mock` annotation tells it to mock your objects.  That’s it!  To help understand a little better what this library does, this tells the mocking mechanism to extends the MyObj and MySecondObj classes and passes the extended object around instead.  That way, the new spyMyObj has the same method signature as MyObj and can be treated just like it.
 
@@ -128,13 +128,13 @@ Well, if you remember your Java basics pretty well, this is going to cause an is
 Powermock to the rescue!  Powermock is a great tool that extends EasyMock and Mockito to use reflection and a custom classloader (i.e. “bytecode manipulation”) to allow EasyMock and Mockito to unfinalize these methods (but just for testing).
 
 For each class that you have final methods on, you are going to have to “prepare” them before execution of the tests by adding them to the @PrepareForTest class annotation.  In this case, I’m going to assume that MyObj and MySecondObj both have final methods and “prepare” them:
-{% highlight java %}
+```java
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({MyObj.class, MySecondObj.class})
 MyClassTest {
 	//..mocks and tests
 }
-{% endhighlight %}
+```
 
 ## More Mocking
 That was easy enough.  Now for the fun part.
@@ -142,12 +142,12 @@ That was easy enough.  Now for the fun part.
 You understand how to prepare a class and how to mock objects.  Now the puzzle begins.  How do you test your class?
 
 First, start off with your assumptions.  When you call MyObj, you are expecting it to return some values for use by your constructor.  Adjust your mock objects to return these values in the following way:
-{% highlight java %}
+```java
 when(composite.getProperty("fieldName")).thenReturn(“myResponse”);
-{% endhighlight %}
+```
 
 If you are trying to return another object, you still shouldn’t return an instantiated object.  You should mock some more!
-{% highlight java %}
+```java
 @Mock
 MyThirdObj prims;
 
@@ -155,17 +155,23 @@ MyThirdObj prims;
 public void setup() {
 	when(composite.getProperty("fieldName")).thenReturn(prims);
 }
-{% endhighlight %}
-At this point, you can adjust the mock for prims.  Continue ad nauseam.  Remember though, that each class that you are overriding final classes needs to be added to the prepare section.
+```
+At this point, you can adjust the mock for prims.  Continue ad nauseam.  Remember though, that each class that you are 
+overriding final classes needs to be added to the prepare section.
 
 ## Assertions
 
-Now, you have your objects doing what you want, but you need to check that your MyClass object is doing what you expect. in your test cases, you can use the assertion library included with JUnit.  These are assertTrue, assertFalse, assertEquals, assertNotEquals, assertNull, assertNotNull, assertSame, assertNotSame.  Since you’ve included these in your static imports, you can access any of them.
+Now, you have your objects doing what you want, but you need to check that your MyClass object is doing what you 
+expect. in your test cases, you can use the assertion library included with JUnit.  These are assertTrue, assertFalse, 
+assertEquals, assertNotEquals, assertNull, assertNotNull, assertSame, assertNotSame.  Since you’ve included these in 
+your static imports, you can access any of them.
 
-How do these work?  If the assertion holds true, it continues on.  If the assertion does not hold true, then it will throw an AssertionException.  The testing framework will catch this exception and tell you in your build/reporting that you have a test case failure.
+How do these work?  If the assertion holds true, it continues on.  If the assertion does not hold true, then it will 
+throw an AssertionException.  The testing framework will catch this exception and tell you in your build/reporting that 
+you have a test case failure.
 
 Example:
-{% highlight java %}
+```java
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({MyObj.class, MySecondObj.class})
 public class MyClassTest {
@@ -189,11 +195,13 @@ public class MyClassTest {
 		assertEquals(‘2’, myClass.getValue());
 	}
 }
-{% endhighlight %}
+```
 You can do as many assertions in a test as you want.  If any of them throw an assertionException, the entire test fails.
 
 ## Other Good References
 
-For a more in depth tour of JUnit: <a href="http://www.vogella.com/articles/JUnit/article.html">http://www.vogella.com/articles/JUnit/article.html</a>
+For a more in depth tour of JUnit: 
+[http://www.vogella.com/articles/JUnit/article.html](http://www.vogella.com/articles/JUnit/article.html)
 
-For a more in depth tour of the different types of Testing: <a href="http://en.wikipedia.org/wiki/Software_testing">http://en.wikipedia.org/wiki/Software_testing</a>
+For a more in depth tour of the different types of Testing: 
+[http://en.wikipedia.org/wiki/Software_testing](http://en.wikipedia.org/wiki/Software_testing)

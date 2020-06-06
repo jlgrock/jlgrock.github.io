@@ -6,10 +6,13 @@ description: Using maven to package javascript dependencies
 tags: [maven, javascript]
 ---
 
-Hopefully, the [article]({% post_url /2012/2012-09-09-using-a-maven-javascript-dependency %}) about using JavaScript libraries should have swayed you should use Maven or some other repository to disseminate your libraries. But now you’ve hit a point that you have found a library that doesn’t exists in any Maven Repository (at least not ones that you have access to). What to do now? No worries. Publishing an artifact is easy.
+Hopefully, the [article](/2012/2012-09-09-using-a-maven-javascript-dependency) about using JavaScript 
+libraries should have swayed you should use Maven or some other repository to disseminate your libraries. But now 
+you’ve hit a point that you have found a library that doesn’t exists in any Maven Repository (at least not ones 
+that you have access to). What to do now? No worries. Publishing an artifact is easy.
 
 First, assuming your code is in the location `${basedir}/src/main/javascript`, create a file in `${basedir}/src/main/assermbly` called `assembly.xml`. This file should contain the following:
-{% highlight xml %}
+```xml
 <assembly>
   <id>bin</id>
   <formats>
@@ -26,12 +29,12 @@ First, assuming your code is in the location `${basedir}/src/main/javascript`, c
     </fileSet>
   </fileSets>
 </assembly>      
-{% endhighlight %}
+```
 
 This file will tell the assembly plugin how to package (into a zip, gzip-tarball, and bzip2-tarball) and what to include (“*”, or everything – you can include only specific things or exclude specific things. Please see the Assembly Plugin for more information about configuring includes/excludes).
 
 Next, you need to tell maven to execute the Assembly plugin. Do this by adding the following to your pom.xml:
-{% highlight xml %}
+```xml
 <dependency>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-assembly-plugin</artifactId>
@@ -51,12 +54,23 @@ Next, you need to tell maven to execute the Assembly plugin. Do this by adding t
     </execution>
   </executions>
 </dependency>
-{% endhighlight %}
+```
 
-What if the code isn’t yours, though? OK, now we are in a strange place. First, make sure that the licensing allows you to republish this if you are publishing this somewhere public. If it is [Apache 2](https://opensource.org/licenses/Apache-2.0), [GPL](https://opensource.org/licenses/gpl-license) or [LGPL](https://opensource.org/licenses/lgpl-license), you won’t have an issue republishing it unmodified. But check to be sure.  After that, it gets way more complex. I'd suggest a private maven repository so that you aren't distributing others code.
+What if the code isn’t yours, though? OK, now we are in a strange place. First, make sure that the licensing allows you 
+to republish this if you are publishing this somewhere public. If it is 
+[Apache 2](https://opensource.org/licenses/Apache-2.0), 
+[GPL](https://opensource.org/licenses/gpl-license) or 
+[LGPL](https://opensource.org/licenses/lgpl-license), you won’t have an issue republishing it unmodified. But check 
+to be sure.  After that, it gets way more complex. I'd suggest a private maven repository so that you aren't 
+distributing others code.
 
-First, you need to download the code from the external repository. The following is code that will download Google’s Closure JavaScript library. This uses the SCM plugin. This is the same plugin that acts on your code in your SCM section, allowing you to do mvn scm commands. Why don't we put it in the SCM section? Well, cause now we know that your code will live in a different place than the SCM plugin. So you are going to need to fill out the SCM section with *your* SCM details.
-{% highlight xml %}
+First, you need to download the code from the external repository. The following is code that will download Google’s 
+Closure JavaScript library. This uses the SCM plugin. This is the same plugin that acts on your code in your SCM 
+section, allowing you to do mvn scm commands. Why don't we put it in the SCM section? Well, cause now we know that 
+your code will live in a different place than the SCM plugin. So you are going to need to fill out the SCM section 
+with *your* SCM details.
+
+```xml
 <dependency>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-scm-plugin</artifactId>
@@ -74,8 +88,10 @@ First, you need to download the code from the external repository. The following
     </execution>
   </executions>
 </dependency>
-{% endhighlight %}
+```
 
-Ok, that will have downloaded this into your target/checkout folder. Now, jut make a quick tweak to what we’ve already done. Change the directory that the assembly.xml is pointing at to `${project.build.directory}/checkout`
+Ok, that will have downloaded this into your target/checkout folder. Now, jut make a quick tweak to what we’ve already 
+done. Change the directory that the assembly.xml is pointing at to `${project.build.directory}/checkout`
 
-And Voila! Now, if you just use the Maven release plugin or follow standard deployment procedures, this will be released for everyone in your company (or in the world, depending on where you are publishing to)!
+And Voila! Now, if you just use the Maven release plugin or follow standard deployment procedures, this will be 
+released for everyone in your company (or in the world, depending on where you are publishing to)!

@@ -6,60 +6,63 @@ description: Groovy Scripting or Gradle - check if binding variable (or Gradle p
 tags: [groovy, gradle]
 ---
 
-In scripting, its helpful to create global variables.  It's definitely not a good idea for any form of scalability, obviously, but Groovy has done a good job in creating this slight separation of function.
+In scripting, its helpful to create global variables.  It's definitely not a good idea for any form of scalability, 
+obviously, but Groovy has done a good job in creating this slight separation of function.
 
-{% highlight groovy %}
+```groovy
 myBindingVar = 'checkme' //binding occurs, so that it is available everywhere
 def myLocalVar = 'not useful' //this is a local variable that is only available to the local scope
 String myLocalString = 'also not useful' //this is also a local variable that is only available to the local scope
-{% endhighlight %}
+```
 
 The difference is that the following won't work:
-{% highlight groovy %}
+```groovy
 def myLocalVar = 'not useful' //this is a local variable that is only available to the local scope
 def myFunc() {
     println myLocalVar //this will throw an error, because it is out of scope
 }
 myFunc()
-{% endhighlight %}
+```
 
 but the following will work:
-{% highlight groovy %}
+```groovy
 myBindingVar = 'checkme' //binding occurs, so that it is available everywhere
 def myFunc() {
     println myBindingVar
 }
 myFunc()
-{% endhighlight %}
+```
 
-This can cause some problems in scripting if you need to either provide default values or if you need it to provide a better exception if the variable isn't found.
+This can cause some problems in scripting if you need to either provide default values or if you need it to provide a 
+better exception if the variable isn't found.
 
 An easy solution to this is the following:
-{% highlight groovy %}
+```groovy
 if (binding.variables.containsKey("bindingVar")) {
     // do something
 }
-{% endhighlight %}
+```
 Or if you'd like to get a null value for an optional binding:
-{% highlight groovy %}
+```groovy
 def optVar = binding.variables.get("bindingVar")
 if (optVar) {
     // do something
 }
-{% endhighlight %}
-Similarly, when using Gradle, which is based off of Groovy, you can define one or more gradle.properties files. An example gradle properties would be as simple as:
-{% highlight shell %}
+```
+Similarly, when using Gradle, which is based off of Groovy, you can define one or more gradle.properties files. An 
+example gradle properties would be as simple as:
+```bash
 myProp=checkMe
-{% endhighlight %}
+```
 use the following to determine if a property is defined:
-{% highlight groovy %}
+```groovy
 if (gradleProject.properties.containsKey("myProp")) {
     // do something
 }
-{% endhighlight %}
+```
 Or if you'd like to get a null value for an optional property:
-{% highlight groovy %}
+```groovy
 if (gradleProject.properties['myProp']) {
     // do something
 }
-{% endhighlight %}
+```

@@ -7,14 +7,34 @@ img: 2013/group-on-living-social-commericals.jpg
 tags: [git]
 ---
 
-There are a couple notable <a href="http://lifehacker.com/5816059/daily-deals-faceoff-groupon-vs-living-social-vs-google-vs-amazon-vs-facebook">comparisons</a> of daily deal sites.  Most people have been using them for a while.  Many are shifting to a more "on-demand" type service.  These include finding deals near me right now with my phone.  But, since you are purchasing through these daily deal sites, you essentially have a middle man.  This middle man can make or break you.  Now that I've gotten to experience the dark side of them all, here's my experience with them.
+There are a couple notable 
+[comparisons](http://lifehacker.com/5816059/daily-deals-faceoff-groupon-vs-living-social-vs-google-vs-amazon-vs-facebook) 
+of daily deal sites.  Most people have been using them for a while.  Many are shifting to a more "on-demand" type 
+service.  These include finding deals near me right now with my phone. But, since you are purchasing through these daily
+deal sites, you essentially have a middle man.  This middle man can make or break you.  Now that I've gotten to 
+experience the dark side of them all, here's my experience with them.
 
 # Groupon (The Good)
-The original.  Based in Chicago, they started sending out daily email deals in select areas (Chicago, NYC, LA, etc) and have since expanded to everywhere in the US of A.  Some people are concerned with their business model and <a href="http://seekingalpha.com/article/351841-groupon-a-business-that-does-not-easily-scale">whether it can scale</a>.  Of course, this argument seems to hold true for all of the clones as well.  Unfortunately, you have to put feet on the ground in each city.  Internet startups don't like that.  Human capitol is much more expensive.  They like to increase profitability by the only cost associated with growth being adding more computers.  But, since I'm speaking as a customer and not as a internet startup guru, I could care less how the business model will scale.  Only how it affects me.
+The original.  Based in Chicago, they started sending out daily email deals in select areas (Chicago, NYC, LA, etc) 
+and have since expanded to everywhere in the US of A.  Some people are concerned with their business model and 
+[whether it can scale](http://seekingalpha.com/article/351841-groupon-a-business-that-does-not-easily-scale).  
+Of course, this argument seems to hold true for all of the clones as well.  Unfortunately, you have to put feet on the
+ground in each city.  Internet startups don't like that.  Human capitol is much more expensive.  They like to increase 
+profitability by the only cost associated with growth being adding more computers.  But, since I'm speaking as a 
+customer and not as a internet startup guru, I could care less how the business model will scale.  Only how it 
+affects me.
 
-Groupon has been the pinnacle of light for customers.  I have experienced restaurants/stores closing (or restaurants/stores where they aren't even sure if they have closed cause it's still there, but nobody can get in).  They refund everyone immediately without anyone having to call them.  I experienced moving, where I hadn't used a deal.  I called the restaurant to try and use it, and they were booked.  Guess what?  No questions asked.  They refunded it at my request.  I didn't even have to call.  Just a quick issue put in on the website and money back in my account.  Amazing.
+Groupon has been the pinnacle of light for customers.  I have experienced restaurants/stores closing (or 
+restaurants/stores where they aren't even sure if they have closed cause it's still there, but nobody can
+get in).  They refund everyone immediately without anyone having to call them.  I experienced moving, where
+I hadn't used a deal.  I called the restaurant to try and use it, and they were booked.  Guess what?  No
+questions asked.  They refunded it at my request.  I didn't even have to call.  Just a quick issue put in on the 
+website and money back in my account.  Amazing.
 
-Some have said to avoid Groupon <a href="http://posiescafe.com/wp/groupon-in-retrospect/">for your business</a>.  This is good information to know, for sure.  However, I disagree with them.  There are definitely good ways to make money on Groupon, but some folks don't understand the overwhelming crowds or the preparation required for staff.  You just have to be prepared before using them.<!--more-->
+Some have said to avoid Groupon [for your business](http://posiescafe.com/wp/groupon-in-retrospect/). This is good 
+information to know, for sure.  However, I disagree with them.  There are definitely good ways to make money on Groupon, 
+but some folks don't understand the overwhelming crowds or the preparation required for staff.  You just have to be 
+prepared before using them.
 
 # Amazon Local (The Bad)
 One of many clones of Groupon.  Originally it was just a skinned version of LivingSocial, but eventually the Boise offices took over this one.  Just another extension of Amazon.com, they are very happy just getting their name in your inbox so you never forget about them.  Though, I'm sure they don't mind the profit either.  Since they originally were just an abstraction for LivingSocial, they are still in the mix, but they can wrap other services as well.  Why not right?  Just be a pass through to other companies?  But they are still expanding <a href="http://bizbeatblog.dallasnews.com/2013/07/amazon-is-building-its-own-groupon-like-business-and-has-expanded-it-to-texas.html/">their own service too</a>, so not just using LivingSocial or other companies.

@@ -7,9 +7,17 @@ img: 2014/fire.jpg
 tags: [technology]
 ---
 
-The guys who make the Spring framework libraries are no slouches.  They know the ups and downs of their own framework, as well as Java as a whole.  They are also on top of all of the newer JVM technologies, such as Groovy, Scala, Gradle, Spock, etc.  Heck, if they weren’t making money hand over fist, I’d think they would be great core language developers.  The would progress the language to a point that I’d love using it again.
+The guys who make the Spring framework libraries are no slouches.  They know the ups and downs of their own framework,
+as well as Java as a whole.  They are also on top of all of the newer JVM technologies, such as Groovy, Scala, Gradle,
+Spock, etc.  Heck, if they weren’t making money hand over fist, I’d think they would be great core language developers.
+The would progress the language to a point that I’d love using it again.
 
-The reason I say all of this is because the developers of the Spring framework realized that there are a couple other frameworks out there (Ruby on Rails, Grails, Django, etc.) that favor convention over configuration.  Meaning, I don’t want to have to set up 50 XML files to configure a project just so that I can get it running as a simple web service.  It shouldn’t be that complicated.  Spring 4 has some answers for you.  Spring introduced Spring Boot, a group of annotations that will favor convention over configuration… at least until you need to change it to something more complicated. The way it acts, I think they may have backported some of the stuff they did for Grails right into Java.
+The reason I say all of this is because the developers of the Spring framework realized that there are a couple other
+frameworks out there (Ruby on Rails, Grails, Django, etc.) that favor convention over configuration.  Meaning, I don’t
+want to have to set up 50 XML files to configure a project just so that I can get it running as a simple web service. 
+It shouldn’t be that complicated.  Spring 4 has some answers for you.  Spring introduced Spring Boot, a group of
+annotations that will favor convention over configuration… at least until you need to change it to something more
+complicated. The way it acts, I think they may have backported some of the stuff they did for Grails right into Java.
 
 ## The Code
 
