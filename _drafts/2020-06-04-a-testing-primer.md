@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Making the Maven Version and Subversion Version Match
-date: 2012-09-13 12:00:00 -0500
+date: 2020-06-5 12:00:00 -0500
 description: working with two different version control systems is painful.  Here's a way to do it, if you have to.
 tags: [testing]
 ---
