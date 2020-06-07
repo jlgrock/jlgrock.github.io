@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Moving my HOA Website from Godaddy to GitHub
-date: 2018-06-06 12:00:00 -0500
+date: 2020-06-06 12:00:00 -0500
 description: Moving my HOA Website from Godaddy to GitHub
 img: 2020/jekyll_software_logo.png
 tags: [jekyll]
