@@ -15,21 +15,49 @@ with a date (yyyy-mm-dd).  For example, the post titled `My Title` would be a fi
 `2015-05-15-my-title`.  Then, make sure that you have a section at the top that follows this format:
 
 ```md
----
 layout: post
 title: My Title
 date: 2015-05-15 12:00:00 -0500
 description: Some Description about the article
 img: 2015/image_for_article.png
 tags: [technology]
----
 ```
+
+I'd suggest looking at the other pages as an example.
 
 Then, commit your changes to github and it will serve those pages.
 
-## Running the Website Locally
-If you should want to see your pages served up in the website, it's suggested
+## Testing your site before you commit
+Sometimes, you are doing something a little more interesting and would like to test it.  
+To do this, you need to follow the 
+[Jekyll Installation Instructions](https://jekyllrb.com/docs/).  At this point, you should be 
+able to run the following commands:
+
+1. Install all of the Ruby Gem dependencies
+
+    `gem install bundler jekyll`
+
+2. Start the server.  If you make any changes to the files, they will be reflected immediately. 
+    
+    `bundle exec jekyll serve`
+
+## Updating Gemfile Dependencies
+Occasionally, it is suggested that you update the dependencies so that you are not exposed to any
+known security problems.  If you have a security vulnerability, it will show up 
+[here](https://github.com/Kendall-Square-VA/Kendall-Square-VA.github.io/security).
+
+Anyways, if this is the case, the most likely fix is to update your project.  This is done with the 
+following command:
+
+    `bundle update`
 
 ## Updating the site with latest Jekyll changes
 If you want to create a post, just check in the file!
 
+## Additional Reading Material
+
+### Jekyll Project Structure
+https://jekyllrb.com/docs/structure/
+
+### Jekyll Documentation
+https://jekyllrb.com/docs/
