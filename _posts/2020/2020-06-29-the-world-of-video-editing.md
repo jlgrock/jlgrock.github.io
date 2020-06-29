@@ -17,13 +17,22 @@ most reasonable price possible.  So, this was my analysis and advice to him.
 ## Understanding the Hardware Landscape in 2020
 Most people have moved to Laptops as their primary machines at this point.  They have cotten cheap and since the 
 invention of utrabooks, starting in 2012ish and significantly improving year over year, they have gotten extremely 
-portable. There is rarely a need for a desktop computer anymore.  Of course desktop computers are going in two 
-directions.
-Feeling the loss of a segment of the population for desktops, that segment of the market has specialized towards people
-who need LOTs of power.   
-Also, there's a minor Coke vs Pepsi war going on with Apple and PCs.  I use both, though I tend to lean Apple, so I'm
-making that known.  They just make solid hardware, and I never have to guess or research for days to find out if it's
-even worth buying.  There is an Apple tax though,
+portable.  Macbooks have gotten light as a feather even with the metal exterior.  Dell XPS's are amazingly tiny.
+With these changes, Hard drives have gotten to basically be another RAM chip and everyone is concerned about power 
+usage, because you gotta make that battery last.
+
+There is rarely a need for a desktop computer anymore.  Of course desktop computers are going in two 
+directions.  Feeling the loss of a segment of the population for desktops, that segment of the market has specialized 
+towards people who need LOTs of power.  They have focused on the people doing 
+[extreme gaming](https://www.youtube.com/watch?v=qhmhn79mJJc) or 
+[virtual reality PCs](https://www.tomsguide.com/us/best-vr-headsets,review-3550.html).
+   
+Also, there's a minor [Cola war](https://www.history.com/news/cola-wars-pepsi-new-coke-failure) going on with Apple 
+and PCs.  I use both, though I tend to lean Apple, so I'm making that known.  They just make solid hardware, and I 
+never have to guess or research for days to find out if it's even worth buying.  There is an Apple tax though.  In
+general though, good hardware is good hardware.  I'm going to pick the computer for the job.  If it's a web server,
+it's going to be a Linux PC, for example.  I also suggest you think about this if you are willing to learn a new OS,
+depending on where you are coming from.  It takes time.
 
 
 ## The Current Video Editor Contenders
