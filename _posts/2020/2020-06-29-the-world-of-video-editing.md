@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Moving my HOA Website from Godaddy to GitHub
-date: 2020-06-07 16:30:00 -0500
+title: Building/Buying a PC for Video Editing
+date: 2020-06-29 16:30:00 -0500
 description: Moving my HOA Website from Godaddy to GitHub
 img: 2020/video_editor.png
 tags: [research]
