@@ -4,7 +4,7 @@ title: SOAP vs REST - Understanding the Underlying Differences
 date: 2014-10-05 12:00:00 -0500
 description: SOAP vs REST - Understanding the Underlying Differences
 img: 2014/internet20081-e1437511408930.jpg
-tags: [technology]
+tags: [research]
 ---
 
 I’ve never used [Simple Object Access Protocol (SOAP)](http://en.wikipedia.org/wiki/SOAP), because, since I’ve been a
