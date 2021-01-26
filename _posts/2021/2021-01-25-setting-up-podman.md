@@ -142,9 +142,19 @@ call this out) to the vagrant box.  This can be easily done with the command.
 podman --remote system connection default vagrant
 ```
 
+OK, let's test it out... and remember, this works exactly like docker.  So, I'm jumping over to Docker hub and grabbing the 
+[Hello World Image](https://hub.docker.com/_/hello-world).  The instructions say to execute `docker run hello-world`, so I'm swapping `docker` out for
+`podman`
+
+```bash
+podman run hello-world
+```
+
+And voila!  You should get some generated output saying "Welcome to Docker!"
+
 
 ## Thats All!
 
-OK, it could have been easier.  Thus why Docker is still winning the hearts and minds of many developers.  But, it's definitely not terribly 
-complicated and gets you working pretty quickly.
+OK, it could have been easier.  Thus why Docker is still winning the hearts and minds of many developers.  Just not necessarily organizations.
+But, with these instuctions, it's definitely not terribly complicated and gets you working with podman pretty quickly.
 
