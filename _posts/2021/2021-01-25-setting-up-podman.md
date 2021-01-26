@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Setting up Podman 2.0 for your local laptop
+title: Setting up Podman 2.0 for MacOS
 date: 2021-01-25 17:42:00 -0500
 description: Trying your hand at Video Editing
 img: 2021/podman.png
