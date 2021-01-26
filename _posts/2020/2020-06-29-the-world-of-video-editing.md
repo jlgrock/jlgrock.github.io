@@ -150,3 +150,11 @@ programs, try the monthly subscription of Creative Cloud.
 5. In the long run, you aren't going to want to be using your laptop monitor for video editing. Turns out, that's a 
 "nice to have".  If you export it and put it on a TV, you'll see how it looks on a TV.  It'll take longer to test it,
 but if you have more time than money, do this.  Switch when that equation flips (e.g, you have more money than time).
+
+
+# Update 1/26/2021
+
+My brother bought a new MacBook Pro for about 6 months now for his business.  He's been working on it daily.
+He is using mostly Davinci Resolve, but he has no qualms as he said it is the best computer he has used yet 
+for video editing.
+

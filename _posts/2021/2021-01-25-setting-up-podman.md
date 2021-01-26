@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Setting up Podman 2.0 for MacOS
+title: Setting up Podman 2.x for MacOS
 date: 2021-01-25 17:42:00 -0500
-description: Trying your hand at Video Editing
+description: Creating a VM for use with Podman and setting up Podman to connect to it
 img: 2021/podman.png
 tags: [containers]
 ---
@@ -27,11 +27,13 @@ So, ideally, you can install podman on your machine and if you know Docker, you 
 commands are analagous.  You can, apparently, even alias podman in your bash shell to docker and it will work (mostly) the same
 from a user perspective.
 
-"Why is this complicated then?", you might ask.  Well, it turns out that you can't run podman engine on anything but Linux.  
-A long time ago, you had to be very specific what type of virtualization you were capatilizing on.  Docker created [Docker Machine](https://github.com/docker/machine)
+## Why is this complicated then?
+
+Well, it turns out that you can't run podman engine on anything but Linux.  A long time ago, you had to be very specific 
+what type of virtualization you were capatilizing on.  Docker created [Docker Machine](https://github.com/docker/machine)
 which could control local and remote machines.  Note that this tool is still used for remote machines with Swarm.  Then
 Docker did some wonderous things to figure out how to make a Linux machine run in-memory as part of your Docker installation.  This
-would run on the native container runner in each environment, (mostly) transparent to the user.
+would run on the native container runner in each environment, (mostly) transparent to the user.  This is what Docker runs on...
 
 
 | OS      | Virtualization Hypervisor           |
@@ -42,14 +44,14 @@ would run on the native container runner in each environment, (mostly) transpare
 | MacOS   | [xhyve](https://github.com/machyve/xhyve) |
 
 
-Podman tried to copy this, with boot2podman, but at this point they have said that this is deprecated and that you should use Linux or Vagrant instead.
+Podman tried to copy this, with boot2podman, but at this point they have said that this is deprecated and that you should use Linux with Vagrant instead.
 Which is why I'm writing this article.  Because how to set that up was **not** clear.
 
 ## Homebrew
 
 At this point, you should be using a package manager, as it's nuts to be figuring out install packages for everything yourself.  Just too much software.  On Fedora/RHEL, this is `dnf`, but we're on MacOS, and the package manager of choice in this article, is **Homebrew**.  Go to the [homepage](https://brew.sh/) and install it, if you haven't already.  If you have, I suggest doing a `brew update` just to make sure you have updated your sources.
 
-## Install Virtual Machine software.
+## Install Virtual Machine software
 
 Install [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads) if you don't currently have anything.  It's free and works well enough.  If you have a license, you can also use [Parallels Business Edition](https://www.parallels.com/) or [VMWare Desktop Pro](https://www.vmware.com/products/workstation-pro.html), but it has to be those versions or higher as it does require some access to port forwarding.
 
