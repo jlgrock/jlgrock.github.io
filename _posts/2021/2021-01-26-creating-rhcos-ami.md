@@ -153,7 +153,7 @@ EOT
 4. Manually Add the role policy for the vmimport service using the json file we just created
 
 ```bash
-aws iam --profile irsm put-role-policy --role-name vmimport --policy-name vmimport --policy-document "vmimport-role-policy.json"
+aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document "vmimport-role-policy.json"
 ```
 
 5. Although I'm not going into it too much, if you need to fix encryption keys, follow the [following guide](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-troubleshooting.html)
@@ -192,7 +192,6 @@ EOT
 
 ```bash
 aws ec2 import-snapshot \
-   --profile irsm \
    --region us-gov-east-1 \
    --description "RHCOS 4.6.8 AWS VMDK" \
    --disk-container file://container-aws-vmdk.json
