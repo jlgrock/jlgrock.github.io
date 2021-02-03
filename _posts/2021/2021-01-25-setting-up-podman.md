@@ -98,8 +98,9 @@ echo "Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 22, host: 2222
   
   config.vm.provision "shell",
-    inline: "sudo dnf install --refresh --enablerepo=updates-testing podman libvarlink-util libvarlink"
+    inline: "sudo dnf install --refresh --enablerepo=updates-testing podman libvarlink-util libvarlink ntp"
     inline: "sudo systemctl enable io.podman.socket"
+    inline: "sudo systemctl start systemd-timesyncd.service"
     inline: "sudo loginctl enable-linger $USER"
 end" >> Vagrantfile
 ```
