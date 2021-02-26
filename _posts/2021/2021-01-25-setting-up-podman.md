@@ -85,7 +85,7 @@ Now, create a directory somewhere.  I'm going to use `~/workspace` as my directo
 mkdir ~/workspace ~/workspace/fedora-box && cd ~/workspace/fedora-box
 ```
 
-Now, create a vagrant file to define your virtual machine in this directory with the following command.  This will create a Fedora 33 image, set the appropriate provider, forward the port 2222 to port 22, and install and enable the appropriate podman software
+Now, create a vagrant file to define your virtual machine in this directory with the following command.  This will create a Fedora 33 image, set the appropriate provider, forward the port 2222 to port 22, and install and enable the appropriate podman software. (Make sure to change "virtualbox" to "parallels" or "vmware" if you are planning on using a different VM tool.)
 
 ```bash
 echo "Vagrant.configure("2") do |config|
