@@ -105,7 +105,7 @@ echo "Vagrant.configure("2") do |config|
   
   config.vm.provision \"shell\", privileged: true, inline: <<-SHELL
     dnf install -y podman libvarlink-util libvarlink ntp --enablerepo=updates-testing --refresh
-    systemctl enable podman.socket
+    systemctl enable --user podman.socket
     systemctl start systemd-timesyncd.service
     loginctl enable-linger
   SHELL
