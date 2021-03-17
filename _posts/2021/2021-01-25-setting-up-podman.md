@@ -85,31 +85,33 @@ Now, create a directory somewhere.  I'm going to use `~/workspace` as my directo
 mkdir ~/workspace ~/workspace/fedora-box && cd ~/workspace/fedora-box
 ```
 
-Now, create a vagrant file to define your virtual machine in this directory with the following command.  This will create a Fedora 33 image, set the appropriate provider, forward the port 2222 to port 22, and install and enable the appropriate podman software. (Make sure to change "virtualbox" to "parallels" or "vmware" if you are planning on using a different VM tool.)
-
-```bash
-echo "Vagrant.configure("2") do |config|
-  config.vm.box = "generic/fedora33"
-  config.vm.hostname = "fedora33"
-  config.vm.provider "virtualbox" do |v|
-    v.memory = 1024
-    v.cpus = 1
-  end
-  config.vm.network "forwarded_port", guest: 22, host: 2222
-  
-  config.vm.provision "shell", inline: "sudo dnf install -y --refresh --enablerepo=updates-testing podman libvarlink-util libvarlink ntp"
-  config.vm.provision "shell", inline: "sudo systemctl enable io.podman.socket"
-  config.vm.provision "shell", inline: "sudo systemctl start systemd-timesyncd.service"
-  config.vm.provision "shell", inline: "sudo loginctl enable-linger $USER"
-end" >> Vagrantfile
-```
-
-Occassionally, you may have issues with connecting to the vm box repository for vagrant and you'll have to download it with the insecure flag.  I had to do this, as my company does a man-in-the-middle attach on all of their employees certificates (don't get me started on how much I hate that...).  To get around this, download with the
-following command.
+Occassionally, you may have issues with connecting to the vm box repository for vagrant and you'll have to download it with the insecure flag.  I had to do this, as my company does a man-in-the-middle attach on all of their employees certificates (don't get me started on how much I hate that...).  To get around this, download with the following command ahead of time.
 
 ```bash
 vagrant box add generic/fedora33 --insecure
 ```
+
+Now, create a vagrant file to define your virtual machine in this directory with the following command.  This will create a Fedora 33 image, set the appropriate provider, forward the port 2222 to port 22, and install and enable the appropriate podman software. (Make sure to change "virtualbox" to "parallels" or "vmware" if you are planning on using a different VM tool.)
+
+```bash
+echo "Vagrant.configure("2") do |config|
+  config.vm.box = \"generic/fedora33\"
+  config.vm.hostname = \"fedora33\"
+  config.vm.provider \"virtualbox\" do |v|
+    v.memory = 1024
+    v.cpus = 1
+  end
+  config.vm.network \"forwarded_port\", guest: 22, host: 2222
+  
+  config.vm.provision \"shell\", privileged: true, inline: <<-SHELL
+    dnf install -y podman libvarlink-util libvarlink ntp --enablerepo=updates-testing --refresh
+    systemctl enable podman.socket
+    systemctl start systemd-timesyncd.service
+    loginctl enable-linger
+  SHELL
+end" > Vagrantfile
+```
+
 
 OK, no you just need to start the Vagrant box, which is as easy as running the following command
 
